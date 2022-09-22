@@ -11,7 +11,7 @@ Steps:
 1. Choose "Mens" in the upper-menu.
 2. Choose "New Arrivals" in the list.
 3. Select "$0-$25" in the price filter
-4. Check if the prices of the items satisfy the condition of fiter.
+4. Check if the prices of the items satisfy the condition of fiter.  
 *Expected result:* on the page only items with price between $0 and $25 are shown.
 
 ---
@@ -25,7 +25,7 @@ Steps:
 3. Select the first item.
 4. Select the first available size.
 5. Press "Add to cart".
-6. Press "Checkout" at the pop-up menu.
+6. Press "Checkout" at the pop-up menu.  
 *Expected result:* the chosen item is in the cart.
 
 ---
