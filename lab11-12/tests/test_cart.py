@@ -24,7 +24,7 @@ def test_multi_product(driver, environment):
     assert Cart_Page.get_count_item_in_cart(driver) == 2
 
 
-@pytest.mark.parametrize("count,price", [(3, "464"), (6, "927")])
+@pytest.mark.parametrize("count,price", [(1, "155"),(3, "464"), (6, "927")])
 def test_calculating_the_amount_for_the_quantity(driver, environment, count, price):
     Item_Page.add_item_to_cart(driver, environment["url_product"], count)
     assert Cart_Page.get_total_price_in_cart(driver) == price

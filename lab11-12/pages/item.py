@@ -1,5 +1,9 @@
 import time
 
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait as Wait
+
 from pages.base import Web_Page
 
 
@@ -8,11 +12,13 @@ class Item_Page:
     def add_item_to_cart(driver, url, count=1):
         if driver.current_url != url:
             Web_Page.get(driver, url)
+        Web_Page.refresh(driver)
         if count > 1:
             XPATH_BUTTON_TO_INCREASE_THE_NUMBER = "//span[@class='arrow-plus counter-button']"
             for i in range(count - 1):
-                # Wait(driver, 10).until(EC.element_to_be_selected((By.XPATH, "//a[@id='cart_button']")))
                 Web_Page.find_element_by_xpath(driver, XPATH_BUTTON_TO_INCREASE_THE_NUMBER).click()
+        Wait(driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//a[@id='cart_button']")))
         add_to_card_button = Web_Page.find_element_by_xpath(driver, "//a[@id='cart_button']")
         add_to_card_button.click()
 

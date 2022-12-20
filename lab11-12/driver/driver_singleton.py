@@ -12,8 +12,8 @@ class Driver_Singleton:
         if not Driver_Singleton.__webdriver:
             if browser == "chrome":
                 chrome_options = Options()
-                # chrome_options.add_argument("--headless")
-                chrome_options.add_argument("start-maximized")
+                chrome_options.add_argument("--headless")
+                # chrome_options.add_argument("start-maximized")
                 Driver_Singleton.__webdriver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),
                                                                 options=chrome_options)
             elif browser == "firefox":

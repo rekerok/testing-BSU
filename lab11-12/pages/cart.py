@@ -44,6 +44,8 @@ class Cart_Page:
         if driver.current_url != Cart_Page.url:
             Web_Page.get(driver, Cart_Page.url)
         try:
+            Wait(driver, 10).until(
+                EC.visibility_of_element_located((By.XPATH, Cart_Page_Xpaths.XPATH_COUNT_PRODUCT.value)))
             return int(Web_Page.find_element_by_xpath(driver, Cart_Page_Xpaths.XPATH_COUNT_PRODUCT.value).get_attribute(
                 "value"))
         except NoSuchElementException:
