@@ -14,7 +14,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope='function')
 def driver(request):
     driver = Driver_Singleton.get_webdriver(request.config.getoption("--browser"))
     yield driver
@@ -26,4 +26,3 @@ def environment(request):
     environment = request.config.getoption("--environment")
     data = utils.read_data_json.read_data_json(environment)
     return data
-
