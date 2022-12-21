@@ -25,20 +25,12 @@ class Web_Page:
 
     def open_cart(self):
         self.get("https://bagland.by/cart/")
-        time.sleep(5)
 
     def go_back(self):
         self._web_driver.back()
-
-
 
     def refresh(self):
         self._web_driver.refresh()
 
     def screenshot(self, file_name='screenshot.png'):
         self._web_driver.save_screenshot(file_name)
-
-    def get_sum_price_in_cart(self):
-        price = self.find_element_by_xpath(
-            "//nav[@class='menu_top navbar navbar-default']//p[@class='cart_price']").text
-        return price.split()[0]

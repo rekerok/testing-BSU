@@ -11,5 +11,5 @@ def test_add_to_card(driver):
     item_page.get(url_item_second)
     item_page.add_item_to_cart()
     cart_page = Cart_Page(driver)
-    result = cart_page.get_sum_price_in_cart()
+    result = cart_page.get_total_price()
     assert result == price_products
