@@ -13,10 +13,6 @@ class Item_Page:
         return count
 
     @staticmethod
-    def add_several_identical_products(driver, url, count):
-        pass
-
-    @staticmethod
     def add_item_to_cart(driver, url, count=1):
         Web_Page.get(driver, url)
         if count > 1:
