@@ -15,3 +15,7 @@ class Item_Page_Xpaths(enum.Enum):
     XPATH_BUTTON_TO_INCREASE_THE_NUMBER = "//span[@class='arrow-plus counter-button']"
     XPATH_BUTTON_ADD_TO_CARD = "//a[@id='cart_button']"
     XPATH_PRICE = "//p[text()=' бел. руб.']/span"
+
+
+class Catalog_Page_Xpaths(enum.Enum):
+    XPATH_ALL_PRODUCTS = "//p[@class='popular_title']"
