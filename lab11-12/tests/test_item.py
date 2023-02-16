@@ -19,7 +19,7 @@ def test_multi_product(driver, environment):
     assert result == 2
 
 
-@pytest.mark.parametrize("size,price", [("s_size", "155"), ("m_size", "189"), ("l_size", "255")])
+@pytest.mark.parametrize("size,price", [("s_size", "157"), ("m_size", "192"), ("l_size", "259")])
 def test_counter_new_price_for_size(driver, environment, size, price):
     Item_Page.set_size_product(driver, environment["url_product"], size)
     assert Item_Page.get_price_item(driver) == price
